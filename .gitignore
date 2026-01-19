@@ -42,3 +42,6 @@ next-env.d.ts
 
 # media
 *.mp3
+
+# private notes
+strategic_notes.md
