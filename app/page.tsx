@@ -97,7 +97,7 @@ export default function Home() {
       const resAnalysis = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ transcript: fullTranscript }),
+        body: JSON.stringify({ transcript: fullTranscript, language: lang }),
       });
 
       if (!resAnalysis.ok) {
@@ -145,11 +145,13 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-muted-foreground text-xl max-w-2xl mx-auto"
+          className="text-muted-foreground text-xl max-w-2xl mx-auto space-y-2"
         >
-          {t.subtitle}
+          <span>{t.subtitleLine1}</span>
           <br />
-          <span className="text-sm text-green-400/80 font-mono">{t.largeFileNote}</span>
+          <span className="text-slate-300">{t.subtitleLine2}</span>
+          <br />
+          <span className="text-sm text-green-400/80 font-mono block pt-2">{t.largeFileNote}</span>
         </motion.p>
       </div>
 
@@ -222,6 +224,17 @@ export default function Home() {
           <Dashboard key="dashboard" data={result} lang={lang} />
         )}
       </AnimatePresence>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="mt-8 text-center"
+      >
+        <p className="text-xs text-slate-500 max-w-lg mx-auto leading-relaxed border-t border-slate-800/50 pt-8">
+          {t.disclaimer}
+        </p>
+      </motion.div>
     </main>
   );
 }

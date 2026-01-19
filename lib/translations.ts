@@ -3,11 +3,13 @@ export type Language = "es" | "en";
 export const translations = {
     es: {
         // Main page
-        title: "Analizador de Entrevistas",
-        subtitle: "Eleva tu rendimiento comercial inmobiliario con análisis impulsados por IA. Sube tu grabación o transcripción para empezar.",
-        largeFileNote: "Archivos grandes (+25MB) y texto (.txt, .md) soportados.",
-        dropZone: "Arrastra la grabación aquí",
+        title: "Evaluación Profesional de Habilidades en Pre-Listings",
+        subtitleLine1: "Evaluación estandarizada de habilidades comerciales observables en entrevistas de captación.",
+        subtitleLine2: "Subí una entrevista de captación para obtener una evaluación estructurada de habilidades comerciales.",
+        largeFileNote: "Archivos de audio grandes (>25MB) y transcripciones de texto (.txt, .md) soportados.",
+        dropZone: "Arrastra la grabación de la entrevista de captación aquí",
         dropZoneAlt: "o haz clic para buscar manualmente",
+        disclaimer: "Esta herramienta evalúa comportamientos comerciales observables. No evalúa personalidad, talento ni predice resultados futuros.",
         readyToAnalyze: "Listo para analizar",
         startAnalysis: "Iniciar Análisis",
         transcribingPart: "Transcribiendo parte",
@@ -15,15 +17,36 @@ export const translations = {
         analyzingFull: "Analizando conversación completa con IA...",
         readingTextFile: "Leyendo archivo de texto...",
 
-        // Dashboard
-        interviewPerformance: "Rendimiento de la Entrevista",
-        aiAnalysis: "Análisis IA basado en Preguntas Doradas",
-        qualification: "Calificación",
-        trust_building: "Construcción de Confianza",
-        closing: "Cierre",
-        missedQuestions: "Preguntas Olvidadas",
-        recommendations: "Recomendaciones",
-        actionPlan: "Plan de Acción",
+        // Dimension Names
+        agenda_control: "Agenda Control",
+        commercial_authority: "Commercial Authority",
+        seller_diagnosis: "Seller Diagnosis",
+        objection_handling: "Objection Handling",
+        value_proposition: "Value Proposition",
+        process_closure: "Process Closure",
+        discourse_consistency: "Discourse Consistency",
+
+        // Sections
+        executiveResult: "Resultado Ejecutivo",
+        dimensionEvaluation: "Evaluación de Dimensiones",
+        skillGapAnalysis: "Análisis de Brechas (Skill Gap)",
+        trainingRecommendation: "Recomendación de Entrenamiento",
+        brokerDecisionGuide: "Guía de Decisión para el Broker",
+        observedEvidence: "Evidencia Observada",
+        primaryWeakness: "Debilidad Primaria",
+        observedPattern: "Patrón Observado",
+        commercialImpact: "Impacto Comercial",
+        priorityFocus: "Enfoque de Entrenamiento Prioritario",
+        whatToTrain: "Qué entrenar",
+        whatToObserve: "Qué observar en la próxima entrevista",
+        suitableForTraining: "¿Apto para entrenamiento focalizado?",
+        suitableForHighValue: "¿Apto para listings de alto valor?",
+        recommendedReevaluation: "Reevaluación recomendada",
+
+        // Classifications
+        highRisk: "High Risk",
+        trainablePotential: "Trainable Potential",
+        reliableAgent: "Reliable Agent",
 
         // Export
         exportPDF: "Exportar PDF",
@@ -35,11 +58,13 @@ export const translations = {
     },
     en: {
         // Main page
-        title: "Interview Analyzer",
-        subtitle: "Elevate your real estate sales performance with AI-driven insights. Upload your recording or transcript to get started.",
-        largeFileNote: "Large files (>25MB) and text (.txt, .md) supported.",
-        dropZone: "Drop interview recording here",
+        title: "Listing Interview Skill Evaluation",
+        subtitleLine1: "Standardized evaluation of observable commercial skills during listing interviews.",
+        subtitleLine2: "Upload a listing interview to receive a structured commercial skill assessment.",
+        largeFileNote: "Large audio files (>25MB) and text transcripts (.txt, .md) supported.",
+        dropZone: "Drop the listing interview recording here",
         dropZoneAlt: "or click to browse manually",
+        disclaimer: "This tool evaluates observable commercial behaviors. It does not assess personality, talent, or predict future performance.",
         readyToAnalyze: "Ready to analyze",
         startAnalysis: "Start Analysis",
         transcribingPart: "Transcribing part",
@@ -47,15 +72,36 @@ export const translations = {
         analyzingFull: "Analyzing full conversation with AI...",
         readingTextFile: "Reading text file...",
 
-        // Dashboard
-        interviewPerformance: "Interview Performance",
-        aiAnalysis: "AI Analysis based on Golden Questions",
-        qualification: "Qualification",
-        trust_building: "Trust Building",
-        closing: "Closing",
-        missedQuestions: "Missed Questions",
-        recommendations: "Recommendations",
-        actionPlan: "Action Plan",
+        // Dimension Names
+        agenda_control: "Agenda Control",
+        commercial_authority: "Commercial Authority",
+        seller_diagnosis: "Seller Diagnosis",
+        objection_handling: "Objection Handling",
+        value_proposition: "Value Proposition",
+        process_closure: "Process Closure",
+        discourse_consistency: "Discourse Consistency",
+
+        // Sections
+        executiveResult: "Executive Result",
+        dimensionEvaluation: "Dimension Evaluation",
+        skillGapAnalysis: "Skill Gap Analysis",
+        trainingRecommendation: "Training Recommendation",
+        brokerDecisionGuide: "Broker Decision Guide",
+        observedEvidence: "Observed Evidence",
+        primaryWeakness: "Primary Weakness",
+        observedPattern: "Observed Pattern",
+        commercialImpact: "Commercial Impact",
+        priorityFocus: "Priority Training Focus",
+        whatToTrain: "What to train",
+        whatToObserve: "What to observe in next interview",
+        suitableForTraining: "Suitable for focused training:",
+        suitableForHighValue: "Suitable for high-value listings:",
+        recommendedReevaluation: "Recommended re-evaluation:",
+
+        // Classifications
+        highRisk: "High Risk",
+        trainablePotential: "Trainable Potential",
+        reliableAgent: "Reliable Agent",
 
         // Export
         exportPDF: "Export PDF",

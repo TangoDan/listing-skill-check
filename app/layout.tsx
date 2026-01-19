@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sistema de inteligencia de captación inmobiliaria",
-  description: "Análisis inteligente con IA para evaluación de vendedores inmobiliarios mediante entrevistas en video.",
+  title: "Listing Interview Skill Evaluation",
+  description: "Standardized evaluation of observable commercial skills during listing interviews.",
 };
 
 export default function RootLayout({
