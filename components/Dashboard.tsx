@@ -311,6 +311,7 @@ ${t.disclaimer}
                             {data.classification === "Reliable Agent" && "Consistent professional execution."}
                             {data.classification === "Trainable Potential" && "Acceptable base with clear execution gaps. Focused training is recommended to address identified gaps."}
                             {data.classification === "High Risk" && "Inconsistent execution of core commercial behaviors."}
+                            {!["Reliable Agent", "Trainable Potential", "High Risk"].includes(data.classification) && "No classification details available."}
                         </p>
                     </div>
                 </div>
@@ -360,15 +361,15 @@ ${t.disclaimer}
                     <div className="space-y-4">
                         <div className="space-y-1">
                             <span className="text-xs font-bold text-red-400/60 uppercase">{t.primaryWeakness}</span>
-                            <p className="text-white font-bold text-lg">{data.skill_gap.primary_weakness}</p>
+                            <p className="text-white font-bold text-lg">{data.skill_gap?.primary_weakness || "N/A"}</p>
                         </div>
                         <div className="space-y-1">
                             <span className="text-xs font-bold text-slate-500 uppercase">{t.observedPattern}</span>
-                            <p className="text-slate-300 text-sm leading-relaxed">{data.skill_gap.observed_pattern}</p>
+                            <p className="text-slate-300 text-sm leading-relaxed">{data.skill_gap?.observed_pattern || "No pattern identified."}</p>
                         </div>
                         <div className="space-y-1">
                             <span className="text-xs font-bold text-slate-500 uppercase">{t.commercialImpact}</span>
-                            <p className="text-slate-300 text-sm leading-relaxed">{data.skill_gap.commercial_impact}</p>
+                            <p className="text-slate-300 text-sm leading-relaxed">{data.skill_gap?.commercial_impact || "Impact not calculated."}</p>
                         </div>
                     </div>
                 </div>
@@ -380,22 +381,22 @@ ${t.disclaimer}
                     <div className="space-y-4">
                         <div className="space-y-1">
                             <span className="text-xs font-bold text-blue-400/60 uppercase">{t.priorityFocus}</span>
-                            <p className="text-white font-bold text-lg">{data.training_recommendation.priority_focus}</p>
+                            <p className="text-white font-bold text-lg">{data.training_recommendation?.priority_focus || "N/A"}</p>
                         </div>
                         <div className="space-y-2">
                             <span className="text-xs font-bold text-slate-500 uppercase">{t.whatToTrain}</span>
                             <div className="space-y-2">
-                                {data.training_recommendation.what_to_train.map((item, i) => (
+                                {data.training_recommendation?.what_to_train?.map((item, i) => (
                                     <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
                                         <CheckCircle2 size={14} className="text-blue-500 flex-shrink-0" />
                                         {item}
                                     </div>
-                                ))}
+                                )) || <p className="text-slate-500 text-xs italic">No specific recommendations.</p>}
                             </div>
                         </div>
                         <div className="space-y-1 pt-2">
                             <span className="text-xs font-bold text-slate-500 uppercase">{t.whatToObserve}</span>
-                            <p className="text-slate-300 text-sm italic">"{data.training_recommendation.what_to_observe}"</p>
+                            <p className="text-slate-300 text-sm italic">"{data.training_recommendation?.what_to_observe || "Continue general observation."}"</p>
                         </div>
                     </div>
                 </div>
@@ -408,22 +409,22 @@ ${t.disclaimer}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="flex flex-col items-center text-center space-y-3">
-                        <div className={cn("p-4 rounded-full bg-slate-800", data.broker_decision.suitable_for_training ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10")}>
-                            {data.broker_decision.suitable_for_training ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
+                        <div className={cn("p-4 rounded-full bg-slate-800", data.broker_decision?.suitable_for_training ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10")}>
+                            {data.broker_decision?.suitable_for_training ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
                         </div>
                         <div className="space-y-1">
                             <p className="text-sm font-semibold text-white">{t.suitableForTraining}</p>
-                            <p className="text-xs text-slate-500">{data.broker_decision.suitable_for_training ? "Recommended for immediate focus" : "Requires core training first"}</p>
+                            <p className="text-xs text-slate-500">{data.broker_decision?.suitable_for_training ? "Recommended for immediate focus" : "Requires core training first"}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col items-center text-center space-y-3">
-                        <div className={cn("p-4 rounded-full bg-slate-800", data.broker_decision.suitable_for_high_value ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10")}>
-                            {data.broker_decision.suitable_for_high_value ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
+                        <div className={cn("p-4 rounded-full bg-slate-800", data.broker_decision?.suitable_for_high_value ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10")}>
+                            {data.broker_decision?.suitable_for_high_value ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
                         </div>
                         <div className="space-y-1">
                             <p className="text-sm font-semibold text-white">{t.suitableForHighValue}</p>
-                            <p className="text-xs text-slate-500">{data.broker_decision.suitable_for_high_value ? "Authorized for top-tier listings" : "Hold for low-complexity cases"}</p>
+                            <p className="text-xs text-slate-500">{data.broker_decision?.suitable_for_high_value ? "Authorized for top-tier listings" : "Hold for low-complexity cases"}</p>
                         </div>
                     </div>
 
@@ -433,7 +434,7 @@ ${t.disclaimer}
                         </div>
                         <div className="space-y-1">
                             <p className="text-sm font-semibold text-white">{t.recommendedReevaluation}</p>
-                            <p className="text-xs text-slate-500">{data.broker_decision.recommended_reevaluation}</p>
+                            <p className="text-xs text-slate-500">{data.broker_decision?.recommended_reevaluation || "N/A"}</p>
                         </div>
                     </div>
                 </div>

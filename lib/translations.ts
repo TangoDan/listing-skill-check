@@ -16,6 +16,13 @@ export const translations = {
         of: "de",
         analyzingFull: "Analizando conversación completa con IA...",
         readingTextFile: "Leyendo archivo de texto...",
+        loadingModel: "Cargando modelo local...",
+        transcribing: "Transcribiendo...",
+        fallingBack: "Error en local, usando API...",
+        apiConfirmTitle: "Confirmar Uso de API",
+        apiConfirmMessage: "La transcripción local falló o excedió el tiempo límite (10 min). ¿Deseas continuar usando la API de OpenAI? Esto puede tener costos asociados.",
+        apiConfirmButton: "Sí, usar API",
+        apiCancelButton: "Cancelar proceso",
 
         // Dimension Names
         agenda_control: "Agenda Control",
@@ -71,6 +78,13 @@ export const translations = {
         of: "of",
         analyzingFull: "Analyzing full conversation with AI...",
         readingTextFile: "Reading text file...",
+        loadingModel: "Loading local model...",
+        transcribing: "Transcribing...",
+        fallingBack: "Local error, using API...",
+        apiConfirmTitle: "Confirm API Usage",
+        apiConfirmMessage: "Local transcription failed or timed out (10 min). Do you want to proceed using OpenAI's API? This may incur additional costs.",
+        apiConfirmButton: "Yes, use API",
+        apiCancelButton: "Cancel process",
 
         // Dimension Names
         agenda_control: "Agenda Control",
