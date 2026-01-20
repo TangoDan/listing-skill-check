@@ -154,7 +154,10 @@ export default function Home() {
       }
 
       const finalResult = await resAnalysis.json();
-      setResult(finalResult);
+      setResult({
+        ...finalResult,
+        transcript: fullTranscript
+      });
 
     } catch (e: any) {
       alert("Error: " + e.message);

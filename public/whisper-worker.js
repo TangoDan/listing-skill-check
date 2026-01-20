@@ -10,8 +10,8 @@ class WhisperWorker {
 
     static async getInstance(progress_callback) {
         if (this.instance === null) {
-            console.log("Worker: Cargando modelo Xenova/whisper-tiny...");
-            this.instance = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny', {
+            console.log("Worker: Cargando modelo Xenova/whisper-base...");
+            this.instance = await pipeline('automatic-speech-recognition', 'Xenova/whisper-base', {
                 progress_callback,
             });
             console.log("Worker: Modelo cargado con éxito.");

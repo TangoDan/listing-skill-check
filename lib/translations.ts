@@ -58,7 +58,7 @@ export const translations = {
         // Export
         exportPDF: "Exportar PDF",
         exportMD: "Exportar Informe (MD)",
-        exportTranscript: "Exportar Transcripción (MD)",
+        exportTranscript: "Descargar Transcripción (TXT)",
 
         // Settings
         language: "Idioma",
@@ -120,7 +120,7 @@ export const translations = {
         // Export
         exportPDF: "Export PDF",
         exportMD: "Export Report (MD)",
-        exportTranscript: "Export Transcript (MD)",
+        exportTranscript: "Download Transcript (TXT)",
 
         // Settings
         language: "Language",
